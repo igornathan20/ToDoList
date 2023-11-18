@@ -1,29 +1,29 @@
 package todolist;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario {
- public int id;
- public String nome;
- public String email;
- public List<Task> tarefas ; 
+    private static int nextId = 1;
 
- 
+    private int id;
+    private String nome;
+    private String email;
+    private List<Task> tarefas;
+
     public Usuario(String nome, String email) {
+        this.id = nextId++;
         this.nome = nome;
         this.email = email;
+        this.tarefas = new ArrayList<>();
     }
-    
-    public void atribuirTarefa (Task task ){
-        
+
+    public void atribuirTarefa(Task task) {
+        tarefas.add(task);
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNome() {
@@ -49,5 +49,4 @@ public class Usuario {
     public void setTarefas(List<Task> tarefas) {
         this.tarefas = tarefas;
     }
-    
 }

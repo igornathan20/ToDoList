@@ -1,17 +1,17 @@
 package todolist;
 
-/**
- *
- * @author igorn
- */
 public class ToDoInterface extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ToDoInterface
-     */
+    private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextPane jTextPane1;
+
     public ToDoInterface() {
         initComponents();
     }
+
+    // Adicione outros métodos conforme necessário
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -93,17 +93,17 @@ public class ToDoInterface extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ToDoInterface().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new ToDoInterface().setVisible(true);
         });
     }
 
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane jTextPane1;
+    // End of variables declaration//GEN-END:variables
     // End of variables declaration//GEN-END:variables
 }

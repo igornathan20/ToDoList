@@ -1,24 +1,32 @@
 package todolist;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Gerenciador {
-    public List<Task> tarefas;
-    public List<Usuario> usuarios;
-    
-    public void addTarefa(Task tarefa){
-        
+    private List<Task> tarefas;
+    private List<Usuario> usuarios;
+//AQUI SERIA OS MÉTODOS FUNDAMENTAIS PARA O FUNCIONAMENTO DO TODOLIST
+    public Gerenciador() {
+        this.tarefas = new ArrayList<>();
+        this.usuarios = new ArrayList<>();
     }
-    
-    public void removerTarefa(Task tarefa){
-        
+
+    public void addTarefa(Task tarefa) {
+        tarefas.add(tarefa);
     }
-    
-    public void criarUsuario(String nome, String email){
-        
+
+    public void removerTarefa(Task tarefa) {
+        tarefas.remove(tarefa);
     }
-    
-    public void atribuirTarefa(Task tarefa, Usuario usuario ){
-        
-    }  
+
+    public Usuario criarUsuario(String nome, String email) {
+        Usuario novoUsuario = new Usuario(nome, email);
+        usuarios.add(novoUsuario);
+        return novoUsuario;
+    }
+
+    public void atribuirTarefa(Task tarefa, Usuario usuario) {
+        usuario.atribuirTarefa(tarefa);
+    }
 }

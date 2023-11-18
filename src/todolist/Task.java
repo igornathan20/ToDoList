@@ -3,14 +3,17 @@ package todolist;
 import java.util.Date;
 
 public class Task {
-    public int id;
-    public String descrição;
-    public Date criacaoData;
-    public Date finalizacaoData;
-    public String status;
+    private static int nextId = 1;
 
-    public Task(String descrição, Date criacaoData, String status) {
-        this.descrição = descrição;
+    private int id;
+    private String descricao;
+    private Date criacaoData;
+    private Date finalizacaoData;
+    private String status;
+
+    public Task(String descricao, Date criacaoData, String status) {
+        this.id = nextId++;
+        this.descricao = descricao;
         this.criacaoData = criacaoData;
         this.status = status;
     }
@@ -19,16 +22,12 @@ public class Task {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public String getDescrição() {
-        return descrição;
-    }
-
-    public void setDescrição(String descrição) {
-        this.descrição = descrição;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public Date getCriacaoData() {
